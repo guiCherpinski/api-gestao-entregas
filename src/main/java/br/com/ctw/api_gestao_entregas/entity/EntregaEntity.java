@@ -1,10 +1,7 @@
 package br.com.ctw.api_gestao_entregas.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "tb_entrega")
@@ -12,6 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class EntregaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

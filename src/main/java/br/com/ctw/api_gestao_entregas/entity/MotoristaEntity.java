@@ -1,10 +1,8 @@
 package br.com.ctw.api_gestao_entregas.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import java.util.*;
 
 @Entity
@@ -13,6 +11,7 @@ import java.util.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class MotoristaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

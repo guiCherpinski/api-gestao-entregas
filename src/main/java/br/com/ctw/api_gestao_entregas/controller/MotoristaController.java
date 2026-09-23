@@ -3,12 +3,11 @@ package br.com.ctw.api_gestao_entregas.controller;
 import br.com.ctw.api_gestao_entregas.dto.MotoristaCreateDto;
 import br.com.ctw.api_gestao_entregas.dto.MotoristaResponseDTO;
 import br.com.ctw.api_gestao_entregas.service.MotoristaService;
+import jakarta.validation.Valid;
 import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.*;
 
 @RestController
@@ -22,7 +21,7 @@ public class MotoristaController {
     }
 
     @PostMapping()
-    public ResponseEntity<MotoristaResponseDTO> cadastrarMotorista(MotoristaCreateDto create){
+    public ResponseEntity<MotoristaResponseDTO> cadastrarMotorista(@RequestBody @Valid MotoristaCreateDto create){
         return ResponseEntity.ok(service.cadastrarMotorista(create));
     }
 

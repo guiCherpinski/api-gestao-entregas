@@ -14,9 +14,11 @@ CREATE TABLE tb_motorista (
 );
 
 -- Tabela de Entregas (Relacionamento com Motorista)
-CREATE TABLE tb_entrega (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    descricao VARCHAR(255) NOT NULL,
-    status VARCHAR(30) NOT NULL,
+CREATE TABLE tb_entrega
+(
+    id           BIGINT AUTO_INCREMENT PRIMARY KEY,
+    descricao    VARCHAR(255) NOT NULL,
+    status       VARCHAR(30)  NOT NULL,
     motorista_id BIGINT,
-    FOREIGN KEY (motorista_id) REFERENCES tb_motorista(id)
+    FOREIGN KEY (motorista_id) REFERENCES tb_motorista (id)
+);

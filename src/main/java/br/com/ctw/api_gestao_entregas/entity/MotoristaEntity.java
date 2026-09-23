@@ -1,5 +1,6 @@
 package br.com.ctw.api_gestao_entregas.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,6 +31,7 @@ public class MotoristaEntity {
     )
     private String cnh;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "motorista")
     private Set<EntregaEntity> entrega = new HashSet<>();
 }
